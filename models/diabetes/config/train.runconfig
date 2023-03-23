@@ -1,0 +1,11 @@
+script: train.py
+arguments: []
+framework: Python
+environment:
+  python:
+    userManagedDependencies: false
+    interpreterPath: python
+    condaDependenciesFile: config/train-conda.yml
+  docker:
+    enabled: true
+    baseImage: mcr.microsoft.com/azureml/base:0.2.4
