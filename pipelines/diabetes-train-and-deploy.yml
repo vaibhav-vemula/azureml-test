@@ -18,7 +18,7 @@ steps:
 - task: AzureCLI@2
   displayName: 'Install AML CLI'
   inputs:
-    azureSubscription: $(ml-ws-connection)
+    azureSubscription: mlops_poc_workspace_serv_conn
     scriptLocation: inlineScript
     scriptType: 'bash'
     inlineScript: 'az extension add -n azure-cli-ml'
@@ -26,7 +26,7 @@ steps:
 - task: AzureCLI@2
   displayName: 'Attach folder to workspace'
   inputs:
-    azureSubscription: $(ml-ws-connection)
+    azureSubscription: mlops_poc_workspace_serv_conn
     workingDirectory: $(ml-path)
     scriptLocation: inlineScript
     scriptType: 'bash'
@@ -35,7 +35,7 @@ steps:
 - task: AzureCLI@2
   displayName: 'Create compute for training'
   inputs:
-    azureSubscription: $(ml-ws-connection)
+    azureSubscription: mlops_poc_workspace_serv_conn
     workingDirectory: $(ml-path)
     scriptLocation: inlineScript
     scriptType: 'bash'
@@ -44,7 +44,7 @@ steps:
 - task: AzureCLI@2
   displayName: 'Train model'
   inputs:
-    azureSubscription: $(ml-ws-connection)
+    azureSubscription: mlops_poc_workspace_serv_conn
     workingDirectory: $(ml-path)
     scriptLocation: inlineScript
     scriptType: 'bash'
@@ -55,7 +55,7 @@ steps:
 - task: AzureCLI@2
   displayName: 'Register model'
   inputs:
-    azureSubscription: $(ml-ws-connection)
+    azureSubscription: mlops_poc_workspace_serv_conn
     workingDirectory: $(ml-path)
     scriptLocation: inlineScript
     scriptType: 'bash'
@@ -64,7 +64,7 @@ steps:
 - task: AzureCLI@2
   displayName: 'Deploy model to ACI for QA'
   inputs:
-    azureSubscription: $(ml-ws-connection)
+    azureSubscription: mlops_poc_workspace_serv_conn
     workingDirectory: $(ml-path)
     scriptLocation: inlineScript
     scriptType: 'bash'
